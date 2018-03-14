@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='SteamAPI',
-        version='0.1',
+        version='0.1.2',
         description='Steam webAPI interface',
         install_requires=[
             "requests==2.18.4",

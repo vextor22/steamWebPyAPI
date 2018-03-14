@@ -4,7 +4,7 @@ import SteamAPI
 import random
 import os
 
-from .secret_steam_key import *
+from secret_steam_key import *
 
 print(os.urandom(4))
 
