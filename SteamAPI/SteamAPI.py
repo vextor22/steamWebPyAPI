@@ -1,4 +1,3 @@
-from .secret_steam_key import *
 import requests
 
 class SteamAPI(object):
@@ -11,7 +10,7 @@ class SteamAPI(object):
             for result in self.json:
                 for player in self.json[result]['players']:
                     self.name = player['personaname']
-    def __init__(self):
+    def __init__(self, steam_key):
         self.key = steam_key
 
     def getPlayerSummary(self, steamID):

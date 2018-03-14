@@ -4,12 +4,14 @@ import SteamAPI
 import random
 import os
 
+from .secret_steam_key import *
+
 print(os.urandom(4))
 
 random.seed(os.urandom(4))
 steamID = sys.argv[1]
 
-steamConn = SteamAPI.SteamAPI()
+steamConn = SteamAPI.SteamAPI(steam_key)
 
 #get username
 player = steamConn.getPlayerSummary(steamID)
