@@ -22,7 +22,7 @@ And to uninstall:
 
 Unfortunately I have some difficult wrapping my head around packages apparently, and the import is a little cumbersome.
 
-An example:
+An example (Steam API key must be protected, do not include it inline with code that will be in a public repo):
 
 ```python
 import sys
