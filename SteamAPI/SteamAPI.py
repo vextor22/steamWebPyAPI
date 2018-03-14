@@ -23,3 +23,6 @@ class SteamAPI(object):
         query = 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=%s&steamid=%s&format=json'
         resp = requests.get(query % (steam_key, steamID))
         return resp.json()
+    def getAppList(self):
+        query = 'http://api.steampowered.com/ISteamApps/GetAppList/v0002/'
+        return requests.get(query).json()
