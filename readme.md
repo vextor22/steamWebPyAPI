@@ -26,18 +26,14 @@ An example (Steam API key must be protected, do not include it inline with code 
 
 ```python
 import sys
-import requests
 import SteamAPI
-import random
-import os
 
+//steam key from protected location
 from secret_steam_key import *
 
-print(os.urandom(4))
-
-random.seed(os.urandom(4))
 steamID = sys.argv[1]
 
+//Initialize connecter object
 steamConn = SteamAPI.SteamAPI(steam_key)
 
 #get username
