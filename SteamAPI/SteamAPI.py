@@ -12,6 +12,15 @@ class SteamAPI(object):
     def __init__(self, key):
         self.steam_key = key
 
+    def getPlayerID(self, steamID):
+        query ='http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=%s&vanityurl=%s'
+        response = requests.get(query % (self.steam_key, steamID))
+        print(response)
+        rJson = response.json()['response']
+        if rJson['success'] == 1:
+            print(rJson['steamid'])
+            return rJson['steamid']
+        return None
     def getPlayerSummary(self, steamID):
         query ='http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s'
         response = requests.get(query % (self.steam_key, steamID))

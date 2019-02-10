@@ -9,9 +9,15 @@ from secret_steam_key import *
 print(os.urandom(4))
 
 random.seed(os.urandom(4))
-steamID = sys.argv[1]
 
 steamConn = SteamAPI.SteamAPI(steam_key)
+steamID = sys.argv[1]
+try:
+    int(steamID)    
+    print(isNumeric, type(isNumeric))
+except:
+    steamID = steamConn.getPlayerID(steamID)
+
 
 #get username
 player = steamConn.getPlayerSummary(steamID)
